@@ -3,6 +3,7 @@ const GIFEncoder = require("gifencoder")
 
 /**
  * Generador de imágenes y gif basados en tu avatar de Habbo.
+ * 
  * Información de uso: https://github.com/zlarosav/habbo-imagine
  */
 class HabboImagine {
@@ -14,11 +15,19 @@ class HabboImagine {
         this.shipGif2 = []
     }
 
+    /**
+     * Inicializa el lienzo para la generación de imágenes.
+     * @private Este método es únicamente para uso interno.
+     */
     async initializeCanvas(width, height) {
         this.canvas = Canvas.createCanvas(width, height)
         this.ctx = this.canvas.getContext("2d")
     }
 
+    /**
+     * Inicializa el codificador GIF para la generación de imágenes animadas.
+     * @private Este método es únicamente para uso interno.
+     */
     async initializeGIFEncoder(width, height, delay) {
         this.encoder = new GIFEncoder(width, height)
         this.encoder.start()
@@ -128,16 +137,16 @@ class HabboImagine {
      * 
      */
     async generateSharkImage(url) {
-        await this.initializeCanvas(145, 220)
+        await this.initializeCanvas(145, 150)
                 
         // Upload habbo image
         const imageUrl = `${url}&action=std&direction=4&head_direction=4&img_format=png&gesture=srp&frame=1&headonly=0&size=m`
         const habbo = await Canvas.loadImage(imageUrl)
-        this.ctx.drawImage(habbo, 24, 86, 64, 110)
+        this.ctx.drawImage(habbo, 24, 16, 64, 110)
 
         // Upload shark image
         const shark = await Canvas.loadImage("https://i.imgur.com/vXiUquC.png")
-        this.ctx.drawImage(shark, 0, 84, 145, 136)
+        this.ctx.drawImage(shark, 0, 14, 145, 136)
 
         return this.canvas.toBuffer()
     }
