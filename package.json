@@ -1,0 +1,29 @@
+{
+  "name": "habbo-imagine",
+  "version": "0.1.0",
+  "description": "Create fantasy images using your Habbo character",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlarosav/habbo-imagine.git"
+  },
+  "keywords": [
+    "habbo",
+    "imagen",
+    "discord",
+    "habbo imagine"
+  ],
+  "author": "zlarosav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zlarosav/habbo-imagine/issues"
+  },
+  "homepage": "https://github.com/zlarosav/habbo-imagine#readme",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "gifencoder": "^2.0.1"
+  }
+}
