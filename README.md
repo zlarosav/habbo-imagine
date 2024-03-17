@@ -21,8 +21,8 @@ npm install habbo-imagine
   | `usernames`  | Recibe un **array** con los dos nombres de ambos usuarios       |
   | `urls`       | Recibe un **array** de dos URLs de los avatar de ambos usuarios |
 
-  ![image](https://cdn.discordapp.com/attachments/886715894066200617/1174615042692493352/test.gif?ex=65683c81&is=6555c781&hm=012fcdb95f694e5948b1d478643d498f42b1063f4d537829a88484e73cf1581a&)
-  ![image](https://cdn.discordapp.com/attachments/938014069871484973/1175354724531318875/ship.gif?ex=656aed63&is=65587863&hm=4c18915ee81a59054609b09af586400ccfe46a96e4ce7ee075310a9a15c33c36&)
+  ![Ship Fail](https://github.com/zlarosav/habbo-imagine/blob/main/examples/ship-fail.gif)
+  ![Ship](https://github.com/zlarosav/habbo-imagine/blob/main/examples/ship.gif)
 
 - **Generar Imagen Shark** `generateSharkImage(url)`
 
@@ -32,7 +32,7 @@ npm install habbo-imagine
   | ------------ | --------------------------------------------------------- |
   | `url`        | Recibe un **string** de la URL del avatar del usuario     |
 
-  ![image](https://cdn.discordapp.com/attachments/938014069871484973/1175306724727607316/shark.gif?ex=656ac0af&is=65584baf&hm=f69515b5bbcc7b54158e8f24f298df3d0522636fe13677252c2afcf0ad711111&)
+  ![Shark](https://github.com/zlarosav/habbo-imagine/blob/main/examples/shark.gif)
 
 ## Ejemplos de uso
 
@@ -55,5 +55,4 @@ const shipImage = await habboGenerator.generateShipImage(
 const sharkImage = await habboGenerator.generateSharkImage("https://www.habbo.es/habbo-imaging/avatarimage?&user=Marcos");
 ```
 
-![Imagen](https://media.discordapp.net/attachments/938014069871484973/1175357531850276904/image.png?ex=656af000&is=65587b00&hm=fcecc88f9ae5e67600471c8f04ac0dd9c49930c269af802bd5a01ed65f4fce20&=)
-![Imagen](https://media.discordapp.net/attachments/938014069871484973/1175357749928931398/image.png?ex=656af034&is=65587b34&hm=f329e34e27f3e079eeae7ddc01d5695e42390258aed89bb7d9badfdf2bdcfa4d&=)
+![Imagen](https://github.com/zlarosav/habbo-imagine/blob/main/examples/shark-discord.png)

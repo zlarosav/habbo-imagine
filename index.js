@@ -39,7 +39,7 @@ class HabboImagine {
     /**
      * Genera una imagen "ship" basada en las URLs del avatar de Habbo y el nombre de usuario.
      * 
-     * Retorna una imagen con un porcentaje de compatibilidad entre ambos usuaruos.
+     * Retorna una imagen con un porcentaje de compatibilidad entre ambos usuarios.
      * @param {string[]} usernames - Un array de dos nombres de dos usuarios diferentes.
      * @param {string[]} urls - Un array de dos URLs de los Habbo avatar de dos usuarios diferentes.
      * 
@@ -142,7 +142,7 @@ class HabboImagine {
         // Upload habbo image
         const imageUrl = `${url}&action=std&direction=4&head_direction=4&img_format=png&gesture=srp&frame=1&headonly=0&size=m`
         const habbo = await Canvas.loadImage(imageUrl)
-        this.ctx.drawImage(habbo, 24, 16, 64, 110)
+        this.ctx.drawImage(habbo, 23, 16, 64, 110)
 
         // Upload shark image
         const shark = await Canvas.loadImage("https://i.imgur.com/vXiUquC.png")
