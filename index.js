@@ -1,5 +1,6 @@
 const Canvas = require("canvas")
 const GIFEncoder = require("gifencoder")
+const path = require("path")
 
 /**
  * Generador de imágenes y gif basados en tu avatar de Habbo.
@@ -33,7 +34,7 @@ class HabboImagine {
         this.encoder.start()
         this.encoder.setRepeat(0)
         this.encoder.setDelay(delay)
-        this.encoder.setTransparent()
+        this.encoder.setTransparent(0x00FF00) // Usar verde puro como transparente
     }
 
     /**
@@ -79,8 +80,8 @@ class HabboImagine {
             ]
 
             // Cargar Frames
-            const bg = await Canvas.loadImage("https://i.imgur.com/9n1n6tE.png")
-            const corazones = await Canvas.loadImage("https://i.imgur.com/9llabn6.gif")
+            const bg = await Canvas.loadImage(path.resolve(__dirname, "assets", "ship.png"))
+            const corazones = await Canvas.loadImage(path.resolve(__dirname, "assets", "corazones.png"))
             for (let i=0; i < 4; i++) {
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
                 this.ctx.drawImage(bg, 0, 0, this.canvas.width, this.canvas.height)
@@ -95,7 +96,7 @@ class HabboImagine {
                 this.shipGif2.push(await Canvas.loadImage(urls2[i]))
                 this.ctx.drawImage(this.shipGif2[i], 155-10*i, 95, 64, 110)
                 this.ctx.drawImage(this.shipGif1[i], 100, 95, 64, 110)
-                if (i==3) this.ctx.drawImage(corazones, 110, 95, 108, 117)
+                if (i==3) this.ctx.drawImage(corazones, 0, 0, this.canvas.width, this.canvas.height)
                 this.encoder.addFrame(this.ctx)
             }
 
@@ -106,7 +107,7 @@ class HabboImagine {
 
             const url1 = `${urls[0]}&action=sit&gesture=sad&direction=4&head_direction=4&img_format=png&size=m`
             const url2 = `${urls[1]}&action=sit,drk=6&direction=2&head_direction=2&img_format=png&size=m`
-            const bg = await Canvas.loadImage("https://i.imgur.com/AvWXrnY.png")
+            const bg = await Canvas.loadImage(path.resolve(__dirname, "assets", "ship-fail.png"))
             const img1 = await Canvas.loadImage(url1)
             const img2 = await Canvas.loadImage(url2)
             this.ctx.drawImage(bg, 0, 0, this.canvas.width, this.canvas.height)
@@ -145,7 +146,7 @@ class HabboImagine {
         this.ctx.drawImage(habbo, 23, 16, 64, 110)
 
         // Upload shark image
-        const shark = await Canvas.loadImage("https://i.imgur.com/vXiUquC.png")
+        const shark = await Canvas.loadImage(path.resolve(__dirname, "assets", "shark.png"))
         this.ctx.drawImage(shark, 0, 14, 145, 136)
 
         return this.canvas.toBuffer()
